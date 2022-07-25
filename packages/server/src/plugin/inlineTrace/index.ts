@@ -3,7 +3,10 @@ import { TraceTreeBuilder } from '../traceTreeBuilder.js';
 import type { ApolloServerPluginUsageReportingOptions } from '../usageReporting/options.js';
 import { internalPlugin } from '../../internalPlugin.js';
 import { schemaIsFederated } from '../schemaIsFederated.js';
-import type { ApolloServerPlugin, BaseContext } from '../../externalTypes/index.js';
+import type {
+  ApolloServerPlugin,
+  BaseContext,
+} from '../../externalTypes/index.js';
 
 export interface ApolloServerPluginInlineTraceOptions {
   /**

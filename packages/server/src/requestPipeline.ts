@@ -51,7 +51,10 @@ import {
 } from './utils/invokeHooks.js';
 
 import { HeaderMap, newHTTPGraphQLHead } from './runHttpQuery.js';
-import type { ApolloServerInternals, SchemaDerivedData } from './ApolloServer.js';
+import type {
+  ApolloServerInternals,
+  SchemaDerivedData,
+} from './ApolloServer.js';
 import { isDefined } from './utils/isDefined.js';
 import type { Logger } from '@apollo/utils.logger';
 

@@ -1,4 +1,7 @@
-import type { ApolloServerPlugin, BaseContext } from '../../../externalTypes/index.js';
+import type {
+  ApolloServerPlugin,
+  BaseContext,
+} from '../../../externalTypes/index.js';
 import type { ImplicitlyInstallablePlugin } from '../../../ApolloServer.js';
 import type {
   ApolloServerPluginLandingPageLocalDefaultOptions,

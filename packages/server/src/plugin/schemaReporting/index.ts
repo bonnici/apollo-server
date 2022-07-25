@@ -5,7 +5,10 @@ import { printSchema, validateSchema, buildSchema } from 'graphql';
 import { SchemaReporter } from './schemaReporter.js';
 import { schemaIsFederated } from '../schemaIsFederated.js';
 import type { SchemaReport } from './generated/operations.js';
-import type { ApolloServerPlugin, BaseContext } from '../../externalTypes/index.js';
+import type {
+  ApolloServerPlugin,
+  BaseContext,
+} from '../../externalTypes/index.js';
 import type { Fetcher } from '@apollo/utils.fetcher';
 import { packageVersion } from '../../generated/packageVersion.js';
 import { computeCoreSchemaHash } from '../../utils/computeCoreSchemaHash.js';
