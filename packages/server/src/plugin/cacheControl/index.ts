@@ -4,7 +4,7 @@ import type {
   CacheAnnotation,
   CacheHint,
   CacheScope,
-} from '../../externalTypes';
+} from '../../externalTypes/index.js';
 import {
   DirectiveNode,
   getNamedType,

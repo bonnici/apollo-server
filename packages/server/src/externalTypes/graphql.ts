@@ -6,10 +6,10 @@ import type {
   GraphQLSchema,
   OperationDefinitionNode,
 } from 'graphql';
-import type { CachePolicy } from './cacheControl';
-import type { BaseContext } from './context';
-import type { HTTPGraphQLHead, HTTPGraphQLRequest } from './http';
-import type { ApolloServer } from '../ApolloServer';
+import type { CachePolicy } from './cacheControl.js';
+import type { BaseContext } from './context.js';
+import type { HTTPGraphQLHead, HTTPGraphQLRequest } from './http.js';
+import type { ApolloServer } from '../ApolloServer.js';
 
 export interface GraphQLRequest {
   query?: string;

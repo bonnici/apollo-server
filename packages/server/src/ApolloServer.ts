@@ -43,7 +43,7 @@ import type {
   PersistedQueryOptions,
   HTTPGraphQLHead,
   ContextThunk,
-} from './externalTypes';
+} from './externalTypes/index.js';
 import { runPotentiallyBatchedHttpQuery } from './httpBatching.js';
 import { InternalPluginId, pluginIsInternal } from './internalPlugin.js';
 import {
@@ -61,7 +61,7 @@ import {
 import { SchemaManager } from './utils/schemaManager.js';
 import { isDefined } from './utils/isDefined.js';
 import type { WithRequired } from '@apollo/utils.withrequired';
-import type { ApolloServerOptionsWithStaticSchema } from './externalTypes/constructor';
+import type { ApolloServerOptionsWithStaticSchema } from './externalTypes/constructor.js';
 
 const NoIntrospection = (context: ValidationContext) => ({
   Field(node: FieldDefinitionNode) {

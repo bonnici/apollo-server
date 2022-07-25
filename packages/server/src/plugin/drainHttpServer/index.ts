@@ -1,5 +1,5 @@
 import type http from 'http';
-import type { ApolloServerPlugin, BaseContext } from '../../externalTypes';
+import type { ApolloServerPlugin, BaseContext } from '../../externalTypes/index.js';
 import { Stopper } from './stoppable.js';
 
 /**

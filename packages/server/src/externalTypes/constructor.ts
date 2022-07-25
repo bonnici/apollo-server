@@ -8,8 +8,8 @@ import type {
   ValidationContext,
 } from 'graphql';
 import type { KeyValueCache } from '@apollo/utils.keyvaluecache';
-import type { BaseContext, GraphQLExecutor } from '.';
-import type { PluginDefinition } from './plugins';
+import type { BaseContext, GraphQLExecutor } from './index.js';
+import type { PluginDefinition } from './plugins.js';
 
 export type Unsubscriber = () => void;
 

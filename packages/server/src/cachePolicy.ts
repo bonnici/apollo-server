@@ -1,4 +1,4 @@
-import type { CacheHint, CachePolicy } from './externalTypes';
+import type { CacheHint, CachePolicy } from './externalTypes/index.js';
 
 export function newCachePolicy(): CachePolicy {
   return {

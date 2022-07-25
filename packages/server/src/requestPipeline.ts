@@ -42,7 +42,7 @@ import type {
   GraphQLRequestExecutionListener,
   BaseContext,
   HTTPGraphQLHead,
-} from './externalTypes';
+} from './externalTypes/index.js';
 
 import {
   invokeDidStartHook,
@@ -51,7 +51,7 @@ import {
 } from './utils/invokeHooks.js';
 
 import { HeaderMap, newHTTPGraphQLHead } from './runHttpQuery.js';
-import type { ApolloServerInternals, SchemaDerivedData } from './ApolloServer';
+import type { ApolloServerInternals, SchemaDerivedData } from './ApolloServer.js';
 import { isDefined } from './utils/isDefined.js';
 import type { Logger } from '@apollo/utils.logger';
 
