@@ -24,6 +24,7 @@ grep 'function createApplication' "$ROLLUP_OUT_DIR"/bundle.mjs
 ! grep 'function createApplication' "$ROLLUP_OUT_DIR"/bundle-no-express.mjs
 
 # Ensure basic TypeScript builds work.
-tsc --build tsconfig.{esm,cjs}.json
+tsc --build tsconfig.{esm,cjs,nodenext}.json
 node generated/tsc/smoke-test.cjs
 node generated/tsc/smoke-test.mjs
+node generated/tsc/nodenext/smoke-test.js

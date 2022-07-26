@@ -1,0 +1,13 @@
+{
+  "files": [
+    "smoke-test.ts",
+  ],
+  "compilerOptions": {
+    "outDir": "generated/tsc/nodenext",
+    "module": "NodeNext",
+    "moduleResolution": "nodenext",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+  },
+}
