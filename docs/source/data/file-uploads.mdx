@@ -11,13 +11,13 @@ Another common approach is to add file upload support directly to Apollo Server 
 
 > ⚠️ This approach is vulnerable to a [CSRF mutation attacks](https://github.com/apollographql/apollo-server/security/advisories/GHSA-2p3c-p3qw-69r4) if you turn off Apollo Server 4's default CSRF Protection (e.g., passing `csrfPrevention: false` to your `ApolloServer` constructor).
 
-In the examples below, we show how to configure CSRF prevention to avoid this vulnerability. You can do this by requiring a "preflight" `OPTIONS` request before executing an operation. When configuring your file upload client, you will need to send a non-empty `Apollo-Require-Preflight` header or Apollo Server will block the request. For example, if you use the `apollo-upload-client` package with Apollo Client Web, pass the header: `{'Apollo-Require-Preflight': 'true'}` to `createUploadLink`.
+The examples below show how to avoid a CSRF vulnerability by requiring a "preflight" `OPTIONS` request before executing an operation. When configuring your file upload client, you must send a non-empty `Apollo-Require-Preflight` header, or Apollo Server will block the request. For example, if you use the `apollo-upload-client` package with Apollo Client Web, you should pass the `{'Apollo-Require-Preflight': 'true'}` header to `createUploadLink`.
 
 <!-- TODO:AS4 confirm if this is true -->
 
-**New in Apollo Server 4:** Note you can't add file uploads if you are using `startStandaloneServer`, you must use another Apollo Server 4 integration. This page shows how to integrate `graphql-upload` using Apollo Server 4's Express integration (i.e., `expressMiddleware`).
+**New in Apollo Server 4:** The `startStandaloneServer` function doesn't support file uploads, you must use another Apollo Server 4 integration. This article shows how to integrate `graphql-upload` using Apollo Server 4's Express integration (i.e., `expressMiddleware`).
 
-To implement similar functionality with another Node.js HTTP framework (e.g., Koa), see the [`graphql-upload` documentation](https://github.com/jaydenseric/graphql-upload) for more information. Note, some integrations might need to use `graphql-upload`'s `processRequest` directly.
+To implement similar functionality with another Node.js HTTP framework (e.g., Koa), see the [`graphql-upload` documentation](https://github.com/jaydenseric/graphql-upload) for more information. Note that some integrations might need to use `graphql-upload`'s `processRequest` directly.
 
 ### Integrating with Express
 
@@ -28,8 +28,7 @@ import { ApolloServer } from '@apollo/server';
 import { expressMiddleware } from '@apollo/server/express4';
 import express from 'express';
 import cors from 'cors';
-import pkg from 'body-parser';
-const { json } = pkg;
+import bodyParser from 'body-parser';
 import { finished } from 'stream/promises';
 import GraphQLUpload from 'graphql-upload/GraphQLUpload.mjs';
 import graphqlUploadExpress from 'graphql-upload/graphqlUploadExpress.mjs';
@@ -96,7 +95,7 @@ async function startServer() {
     '/graphql',
     graphqlUploadExpress(),
     cors<cors.CorsRequest>(),
-    json(),
+    bodyParser.json(),
     expressMiddleware(server),
   );
 
